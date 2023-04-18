@@ -4,6 +4,7 @@ from tkinter import ttk
 import tkinter.messagebox
 from turtle import update
 import Database
+import ailk
 
 class GUI:
     def __init__(self, root, account):
@@ -128,7 +129,7 @@ class GUI:
     def save_data(self):
         if self.item.get() == "" or self.type.get() == "" or self.status.get() == "" or self.position.get() == "":
             tkinter.messagebox.askokcancel(title='Invalid',
-                                           message='Please enter valid data')
+                                           message=ailk.aisht(self.type.get()))
         else:
             try:
                 Database.add(self.account,
